@@ -134,6 +134,7 @@ const casse = (d, r, nl) => {
     console.log(`cassé (${d}, ${r})`)
     i = 0
     nl = []
+    paragraphe.innerHTML = "cassé"
 }
 
 bouton.addEventListener("click", () => {
