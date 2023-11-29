@@ -134,7 +134,7 @@ const casse = (d, r, nl) => {
     console.log(`cassé (${d}, ${r})`)
     i = 0
     nl = []
-    paragraphe.innerHTML = "cassé"
+    paragraphe.innerHTML = "La liste est cassée (quelqu'un s'est pioché lui-même), faut actualiser"
 }
 
 bouton.addEventListener("click", () => {
@@ -147,15 +147,18 @@ bouton.addEventListener("click", () => {
         const receveur = receveurs.splice(nombre, 1)
 
         nouvelleListe.push(`- ${donneur} donne à ${receveur}`)
+        nouvelleListe.push("Ici c'est le résultat")
         
         i = i - 1
     }
     
-    paragraphe.innerHTML = "Liste créée (normalement, vérif la console)"
+    paragraphe.innerHTML = "La liste est créée, appuie sur le bouton pour avoir les résultats"
 })
 
 bouton2.addEventListener("click", () => {
-    item++
+    item = item + 1
     annonce.innerHTML = nouvelleListe[item]
-    bouton2.innerHTML = `Récupère (prochain : ${noms[item + 1]})`
+    if(item%2 == 1) {
+        bouton2.innerHTML = `Récupère (prochain : ${noms[(item+1)/2]})`
+    }
 })
