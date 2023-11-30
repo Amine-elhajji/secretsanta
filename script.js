@@ -101,6 +101,7 @@ const random = (nombre) => {
 
 const bouton = document.querySelector("#creation");
 const bouton2 = document.querySelector("#recuperation");
+const bouton3 = document.querySelector("#reinitialisation");
 const annonce = document.querySelector("li");
 const paragraphe = document.querySelector("p");
 
@@ -148,4 +149,9 @@ bouton2.addEventListener("click", () => {
     if(item%2 == 1) {
         bouton2.innerHTML = `Récupère (prochain : ${noms[(item+1)/2]})`
     }
+})
+
+bouton3.addEventListener("click", () => {
+    localStorage.clear()
+    bouton3.innerHTML = "Stockage local effacé avec succès."
 })
