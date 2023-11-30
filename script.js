@@ -33,9 +33,6 @@ const noms = [
     "Meena"
 ]
 const donneurs = [
-    "Marouane",
-    "Teysha",
-    "Alix",
     "Sofyane",
     "Liam",
     "Jeanne",
@@ -86,12 +83,9 @@ const receveurs = [
     "Ilian",
     "Raphaëlle",
     "Simon",
-    "Eddy",
-    "Jules",
     "Aimee",
     "Andrea",
     "Mael",
-    "Téa",
     "Charles",
     "Deniz",
     "Raphael",
@@ -113,7 +107,7 @@ const paragraphe = document.querySelector("p");
 let item = -1
 let i = noms.length
 
-let nouvelleListe = new Array;
+let nouvelleListe = ["Marouane donne à Téa", "Ici c'est le résultat", "Teysha donne à Jules", "Ici c'est le résultat", "Alix donne à Eddy", "Ici c'est le résultat"];
 
 const casse = (d, r, nl) => {
     console.log(`cassé (${d}, ${r})`)
