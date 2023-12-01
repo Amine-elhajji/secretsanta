@@ -33,6 +33,9 @@ const noms = [
     "Meena"
 ]
 const donneurs = [
+    "Marouane",
+    "Teysha",
+    "Alix",
     "Sofyane",
     "Liam",
     "Jeanne",
@@ -83,9 +86,12 @@ const receveurs = [
     "Ilian",
     "Raphaëlle",
     "Simon",
+    "Eddy",
+    "Jules",
     "Aimee",
     "Andrea",
     "Mael",
+    "Téa",
     "Charles",
     "Deniz",
     "Raphael",
@@ -96,8 +102,10 @@ const receveurs = [
 ]
 
 const random = (nombre) => {
-    Math.floor(Math.random() * nombre + 1)
+    return Math.floor(Math.random() * (nombre + 1))
 }
+
+
 
 const bouton = document.querySelector("#creation");
 const bouton2 = document.querySelector("#recuperation");
@@ -106,7 +114,7 @@ const annonce = document.querySelector("li");
 const paragraphe = document.querySelector("p");
 
 let item = -1
-let i = noms.length - 3;
+let i = noms.length;
 
 let nouvelleListe = localStorage.getItem("liste")
 
@@ -120,10 +128,10 @@ const casse = (d, r, nl) => {
 
 bouton.addEventListener("click", () => {
     if(!nouvelleListe) {
-        nouvelleListe = ["Marouane donne à Téa", "Ici c'est le résultat", "Teysha donne à Jules", "Ici c'est le résultat", "Alix donne à Eddy", "Ici c'est le résultat"];
+        nouvelleListe = new Array;
 
         for(i; i>0; null) {
-            const nombre = Math.floor(Math.random() * donneurs.length-1)
+            const nombre = random(donneurs.length - 1)
     
             if(donneurs[0] == receveurs[nombre]) return casse(donneurs[0], receveurs[nombre], nouvelleListe)
     
@@ -132,7 +140,7 @@ bouton.addEventListener("click", () => {
     
             nouvelleListe.push(`- ${donneur} donne à ${receveur}`)
             nouvelleListe.push("Ici c'est le résultat")
-            
+
             i = i - 1
         }
         
@@ -150,6 +158,7 @@ bouton2.addEventListener("click", () => {
         bouton2.innerHTML = `Récupère (prochain : ${noms[(item+1)/2]})`
     }
 })
+
 
 bouton3.addEventListener("click", () => {
     localStorage.clear()
