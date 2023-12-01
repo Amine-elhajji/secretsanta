@@ -134,7 +134,7 @@ const casse = (d, r, nl) => {
     nl = []
     paragraphe.innerHTML = "La liste est cassée (quelqu'un s'est pioché lui-même), faut actualiser"
 }
-// Création de la fonction casse, qui va tout arrêter si ça se casse (très dur à comprendre)
+// Création de la fonction casse, qui va tout arrêter si ça se casse (pas très dur à déchiffrer)
 
 bouton.addEventListener("click", () => {
     // Si on clique sur le bouton 1 (créer une nouvelle liste), alors :
